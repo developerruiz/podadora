@@ -1,0 +1,49 @@
+
+CREATE TABLE reg_event(
+	id_reg INT(9) AUTO_INCREMENT NOT NULL,
+	id_usuario_reg INT(9),
+	arbol VARCHAR(50),
+	area VARCHAR(255),
+	especie VARCHAR(100),
+	trabajo_realizar VARCHAR(255),
+	altura FLOAT(8,4),
+	diametro FLOAT(8,4),
+	ubicacion VARCHAR(255),
+	colonia VARCHAR(255),
+	PRIMARY KEY (id_reg)	
+);
+
+
+
+CREATE TABLE tb_usuario(
+	id_usuario_reg INT(9) AUTO_INCREMENT NOT NULL,
+	usuario VARCHAR (100),
+	correo VARCHAR (50),
+	contraseña VARCHAR(25),
+	tipo_usuario INT(1),
+	estatus INT(1),
+	telefono (NUMERIC),
+	PRIMARY KEY (id_usuario_reg)
+);
+
+CREATE TABLE tb_fotos (
+	id INT(10)
+	id_usuario_reg(9)
+	foto_1 LONGBLOB,
+	foto_2 LONGBLOB,
+	foto_3 LONGBLOB,
+	foto_4 LONGBLOB,
+	foto_5 LONGBLOB,
+	PRIMARY KEY (id)	
+);
+
+CREATE TABLE estatus (
+	id_estatus(1)
+	estatus VARCHAR(50)
+	PRIMARY KEY (id_estatus)
+);
+
+CREATE TABLE tb_tipo_usuario (
+	id_tipo INT(1)
+	tipo VARCHAR(50)
+);
