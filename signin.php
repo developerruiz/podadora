@@ -22,7 +22,7 @@
 <body class="text-center">
 
     <main class="form-signin">
-        <form>
+        <form action="procesos/valida_sesion.php">
             <img class="mb-4" src="img/portada.png" alt="" width="150">
             <h1 class="h4 mb-3 fw-normal">Panel de registro</h1>
 
@@ -35,19 +35,17 @@
                 <label for="floatingPassword">Contraseña</label>
             </div>
 
-            <button class="w-100 mt-3 btn btn-lg bg-p" type="button" onclick="ingresar()">Iniciar sesión</button>
-            <p class="mt-5 mb-3 text-muted">&copy;Code<> 2022-2023</p>
+            <button class="w-100 mt-3 btn btn-lg bg-p" type="submit">Iniciar sesión</button>
+            <p class="mt-5 mb-3 text-muted">&copy;CenturyTechCo 2022-2023</p>
         </form>
     </main>
 
 
-    <script>
+    <!-- <script>
         function ingresar(){
-
-                window.location = 'home.html';
-
+                window.location = 'home.php';
         }
-    </script>
+    </script> -->
 
 </body>
 

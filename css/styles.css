@@ -6,6 +6,10 @@
   font-size: 16px;
 }
 
+body {
+  background: #fff;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #82498c !important;
 }
@@ -13,5 +17,14 @@ h1, h2, h3, h4, h5, h6 {
 .bg-p {
   background: #82498c !important;
   color: #ffffff;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #82498c !important;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(130, 73, 140, 0.25);
+          box-shadow: 0 0 0 0.25rem rgba(130, 73, 140, 0.25);
 }
 /*# sourceMappingURL=styles.css.map */

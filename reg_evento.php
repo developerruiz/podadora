@@ -18,73 +18,92 @@
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
     <!-- FontAwensome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="#">Sign out</a>
+
+    <main>
+
+        <section>
+            <div class="container d-flex justify-content-center">
+                <div class=" col-lg-10 col-12 my-4">
+                    <h4 class="text-center py-3">
+                        Registro de informacion de tala
+                    </h4>
+                    <form class="d-flex flex-wrap" action="procesos/registrar.php">
+                        <div class="col-6 p-2">
+                            <div class="label">Arbol</div>
+                            <input type="text" name="arbol" id="arbol" class="form-control">
+                        </div>
+                        <div class="col-6 p-2">
+                            <div class="label">Área</div>
+                            <input type="text" name="area" id="area" class="form-control">
+                        </div>
+                        <div class="col-6 p-2">
+                            <div class="label">Especie</div>
+                            <input type="text" name="especie" id="especie" class="form-control">
+                        </div>
+                        <div class="col-6 p-2">
+                            <div class="label">Colonia</div>
+                            <input type="text" name="colonia" id="colonia" class="form-control">
+                        </div>
+                        <div class="col-12 p-2">
+                            <div class="label">Trabajo realizar</div>
+                            <textarea name="trabajo_realizar" id="trabajo_realizar" cols="30" rows="10"
+                                class="form-control"></textarea>
+                        </div>
+                        <div class="col-6 p-2">
+                            <div class="label">Altura</div>
+                            <input type="text" name="altura" id="altura" class="form-control">
+                        </div>
+                        <div class="col-6 p-2">
+                            <div class="label">Diametro</div>
+                            <input type="text" name="diametro" id="diametro" class="form-control">
+                        </div>
+                        <div class="col-12 p-2">
+                            <div class="label">Ubicación</div>
+                            <input type="text" name="ubicacion" id="ubicacion" class="form-control">
+                        </div>
+
+
+                        <div class="form-group col-md-6">
+                            <label class="fw-bold my-2" for="">Imagen</label>
+                            <br>
+                            <input type="file" name="imagen1" id="imagen">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="fw-bold my-2" for="">Imagen</label>
+                            <br>
+                            <input type="file" name="imagen2" id="imagen">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="fw-bold my-2" for="">Imagen</label>
+                            <br>
+                            <input type="file" name="imagen3" id="imagen">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="fw-bold my-2" for="">Imagen</label>
+                            <br>
+                            <input type="file" name="imagen4" id="imagen">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="fw-bold my-2" for="">Imagen</label>
+                            <br>
+                            <input type="file" name="imagen5" id="imagen">
+                        </div>
+                        <div class="col-12 my-4">
+                            <button type="submit" class="btn bg-p btn-lg">Registrar</button>
+                        </div>
+
+                    </form>
+                </div>
             </div>
-        </div>
-    </header>
-
-    <div class="container-fluid">
-        <div class="row">
-          
-        <!--  TODO:  sidebar -->
-        <?php include 'complementos/sidebar.php' ?>
-
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-              
-              <form class="" action="procesos/registrar.php">
-                  <div class="col-6 p-2">
-                      <div class="label">Arbol</div>
-                      <input type="text" name="arbo" id="arbol" class="form-control">
-                  </div>
-                  <div class="col-6 p-2">
-                      <div class="label">Área</div>
-                      <input type="text" name="area" id="area" class="form-control">
-                  </div>
-                  <div class="col-6 p-2">
-                      <div class="label">Especie</div>
-                      <input type="text" name="especie" id="especie" class="form-control">
-                  </div>
-                  <div class="col-6 p-2">
-                      <div class="label">Trabajo realizar</div>
-                      <textarea name="trabajo_realizar" id="trabajo_realizar" cols="30" rows="10" class="form-control"></textarea>
-                  </div>
-                  <div class="col-6 p-2">
-                      <div class="label">Altura</div>
-                      <input type="text" name="altura" id="altura" class="form-control">
-                  </div>
-                  <div class="col-6 p-2">
-                      <div class="label">Diametro</div>
-                      <input type="text" name="diametro" id="diametro" class="form-control">
-                  </div>
-                  <div class="col-6 p-2">
-                      <div class="label">Ubicación</div>
-                      <input type="text" name="ubicacion" id="ubicacion" class="form-control">
-                  </div>
-                  <div class="col-6 p-2">
-                      <div class="label">Colonia</div>
-                      <input type="text" name="colonia" id="colonia" class="form-control">
-                  </div>
-                
-              </form>
-            </main>
-        </div>
-    </div>
+        </section>
+    </main>
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
