@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+include 'conexion.php';
+include 'conexion2.php';
+
+$varsesion = $_SESSION['usuario'];
+
+$query = "SELECT * FROM tb_usuario WHERE email = '$varsesion';";
+
+if($varsesion == null || $varsesion = ''){
+    echo "<script>alert('Favor de iniciar sesión')</script>; <script>window-location='signin.php'</script>";
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -31,23 +48,56 @@
         <section>
             <div class="container d-flex justify-content-center">
                 <div class=" col-lg-10 col-12 my-4">
-                    <h4 class="text-center py-3">
-                        Registro de informacion de tala
-                    </h4>
-                    <form class="d-flex flex-wrap" action="procesos/registrar.php">
-                        <div class="col-6 p-2">
+                    <form class="d-flex flex-wrap" action="proceso/registrar.php" method="POST"
+                        enctype="multipart/form-data">
+
+                        <div class="col-12 d-flex align-items-end justify-content-between my-3">
+                            <h4 class="">
+                                Registro de informacion de tala
+                            </h4>
+                            <div class="d-flex">
+                              
+
+                                    <?php
+                        
+                                    if ($result = $conexion->query($query)) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            
+                                            $field1name = $row["id_usuario_reg"];
+
+                                        }
+                                    $result->free();
+                                    }
+                                    ?>
+
+                                    <input type="hidden" name="id_usuario_reg" id="id_usuario_reg" class="form-control"
+                                        value="<?php echo $field1name?>">
+
+                             
+
+                                <div class="col-12">
+                                    <a href="lista_registro.php">
+                                        <button class="btn bg-p" type="button">mis registros</button>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-6 col-12 p-2">
                             <div class="label">Arbol</div>
                             <input type="text" name="arbol" id="arbol" class="form-control">
                         </div>
-                        <div class="col-6 p-2">
+                        <div class="col-lg-6 col-12 p-2">
                             <div class="label">Área</div>
                             <input type="text" name="area" id="area" class="form-control">
                         </div>
-                        <div class="col-6 p-2">
+                        <div class="col-lg-6 col-12 p-2">
                             <div class="label">Especie</div>
                             <input type="text" name="especie" id="especie" class="form-control">
                         </div>
-                        <div class="col-6 p-2">
+                        <div class="col-lg-6 col-12 p-2">
                             <div class="label">Colonia</div>
                             <input type="text" name="colonia" id="colonia" class="form-control">
                         </div>
@@ -56,11 +106,11 @@
                             <textarea name="trabajo_realizar" id="trabajo_realizar" cols="30" rows="10"
                                 class="form-control"></textarea>
                         </div>
-                        <div class="col-6 p-2">
+                        <div class="col-lg-6 col-12 p-2">
                             <div class="label">Altura</div>
                             <input type="text" name="altura" id="altura" class="form-control">
                         </div>
-                        <div class="col-6 p-2">
+                        <div class="col-lg-6 col-12 p-2">
                             <div class="label">Diametro</div>
                             <input type="text" name="diametro" id="diametro" class="form-control">
                         </div>
@@ -106,6 +156,20 @@
     </main>
 
 
+
+    <?php
+// $username = "root";
+// $password = "";
+// $database = "db_talarbol";
+// $mysqli = new mysqli("localhost", $username, $password, $database);
+
+
+
+?>
+
+
+
+
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
@@ -115,6 +179,8 @@
         integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
     </script>
     <script src="js/dashboard.js"></script>
+
+
 </body>
 
 </html>

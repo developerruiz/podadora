@@ -1,20 +1,20 @@
 <?php
     
-    include '../conexion.php';
+    include '../conexion2.php';
     session_start();
 
-    $usuario        =$_POST['usuario'];
+    $email        =$_POST['email'];
     $contraseña     =$_POST['contraseña'];
-    
-    $_SESSION['usuario'] = $usuario;
 
-    $consulta_usuario= "SELECT * FROM tb_usuarios WHERE email = '$usuario' AND contraseña = '$contraseña'";
-    $resultado = mysqli_query($pdo, $consulta_usuario);
+    $_SESSION['usuario'] = $email;
+
+    $consulta_usuario= "SELECT * FROM tb_usuario WHERE email = '$email' AND contraseña = '$contraseña'";
+    $resultado = mysqli_query($conexion, $consulta_usuario);
 
     $filas = mysqli_num_rows($resultado);
 
     if($filas>0){
-        header("location:../home.php");
+        header("location:../reg_evento.php");
     }else{
         echo "<script>alert('Favor de iniciar sesión');</script><script>window.location='../signin.php'</script>";
     }

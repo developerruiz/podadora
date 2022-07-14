@@ -22,21 +22,21 @@
 <body class="text-center">
 
     <main class="form-signin">
-        <form action="procesos/valida_sesion.php">
+        <form action="proceso/valida_sesion.php" method="POST">
             <img class="mb-4" src="img/portada.png" alt="" width="150">
-            <h1 class="h4 mb-3 fw-normal">Panel de registro</h1>
+            <h1 class="h4 mb-3 fw-normal fw-bold">Panel de registro</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                <label for="email">Correo electrónico</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Contraseña</label>
+                <input type="password" class="form-control" id="contraseña" placeholder="contraseña" name="contraseña">
+                <label for="contraseña">Contraseña</label>
             </div>
 
             <button class="w-100 mt-3 btn btn-lg bg-p" type="submit">Iniciar sesión</button>
-            <p class="mt-5 mb-3 text-muted">&copy;CenturyTechCo 2022-2023</p>
+            <p class="mt-5 mb-3 text-muted">&copy;CodeRuiz 2022-2023</p>
         </form>
     </main>
 
